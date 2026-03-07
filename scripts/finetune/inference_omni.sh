@@ -20,7 +20,7 @@ export ASCEND_LAUNCH_BLOCKING='1'
 torchrun --nproc_per_node $NPROC_PER_NODE \
     --master_port $MASTER_PORT \
     scripts/finetune/inference_omni.py \
-    --data_root /group/40061/cdn/Unifiedllm/Crab-Qwen2.5-Omni \
+    --data_root  \
     --output_dir ${OUTP_DIR}/${WANDB_PROJECT}/${RUN_NAME} \
     --deepspeed deepspeed/stage2-offload.json \
     --model_name_or_path $qwen_omni \
