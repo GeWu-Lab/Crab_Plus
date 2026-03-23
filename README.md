@@ -4,7 +4,6 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2603.04128-AD1C18.svg?logo=arxiv)](https://arxiv.org/abs/2603.04128)
 [![HF Dataset](https://img.shields.io/badge/🤗-Crab_Plus-9C276A.svg)](https://huggingface.co/datasets/Jayson236/Crab_Plus)
-[![HF Model](https://img.shields.io/badge/🤗-Qwen2.5--Omni--7B-9C276A.svg)](https://huggingface.co/Qwen/Qwen2.5-Omni-7B)
 
 **Crab+** is a scalable and unified audio-visual scene understanding model built upon [Qwen2.5-Omni-7B](https://huggingface.co/Qwen/Qwen2.5-Omni-7B) with custom **I-LoRA** (Interaction-aware LoRA) fine-tuning. It addresses the negative transfer problem in multi-task audio-visual learning through explicit cooperation from both data and model perspectives, achieving positive transfer in multi-tasks learning.
 
