@@ -417,9 +417,18 @@ This project is built upon the following open-source projects:
 ## Citation
 
 ```bibtex
-@article{crab2025,
-  title={Crab: Audio-Visual Understanding, Interaction, and Editing},
-  author={},
+@inproceedings{du2025crab,
+  title={Crab: A unified audio-visual scene understanding model with explicit cooperation},
+  author={Du, Henghui and Li, Guangyao and Zhou, Chang and Zhang, Chunjie and Zhao, Alan and Hu, Di},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={18804--18814},
   year={2025}
+}
+
+@article{cai2026crab,
+  title={Crab $\^{}$\{$+$\}$ $: A Scalable and Unified Audio-Visual Scene Understanding Model with Explicit Cooperation},
+  author={Cai, Dongnuan and Du, Henghui and Zhou, Chang and Chen, Xi and Guo, Dan and Zhang, Hongyuan and Li, Xuelong and Hu, Di},
+  journal={arXiv preprint arXiv:2603.04128},
+  year={2026}
 }
 ```
