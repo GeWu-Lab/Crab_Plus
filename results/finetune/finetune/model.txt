@@ -1,0 +1,193 @@
+Qwen2_5OmniForConditionalGeneration(
+  (thinker): PeftModelForCausalLM(
+    (base_model): LoraModel(
+      (model): Qwen2_5OmniThinkerForConditionalGeneration(
+        (audio_tower): Qwen2_5OmniAudioEncoder(
+          (conv1): Conv1d(128, 1280, kernel_size=(3,), stride=(1,), padding=(1,))
+          (conv2): Conv1d(1280, 1280, kernel_size=(3,), stride=(2,), padding=(1,))
+          (positional_embedding): SinusoidsPositionEmbedding()
+          (audio_bos_eos_token): Embedding(2, 3584)
+          (layers): ModuleList(
+            (0-31): 32 x Qwen2_5OmniAudioEncoderLayer(
+              (self_attn): Qwen2_5OmniAudioAttention(
+                (k_proj): Linear(
+                  in_features=1280, out_features=1280, bias=False
+                  (lora_dropout): Dropout(p=0.1, inplace=False)
+                  (lora_route): Linear(in_features=1280, out_features=3, bias=False)
+                  (lora_A): Linear(in_features=1280, out_features=128, bias=False)
+                  (lora_B0): Linear(in_features=128, out_features=1280, bias=False)
+                  (lora_B1): Linear(in_features=128, out_features=1280, bias=False)
+                  (lora_B2): Linear(in_features=128, out_features=1280, bias=False)
+                )
+                (v_proj): Linear(
+                  in_features=1280, out_features=1280, bias=True
+                  (lora_dropout): Dropout(p=0.1, inplace=False)
+                  (lora_route): Linear(in_features=1280, out_features=3, bias=False)
+                  (lora_A): Linear(in_features=1280, out_features=128, bias=False)
+                  (lora_B0): Linear(in_features=128, out_features=1280, bias=False)
+                  (lora_B1): Linear(in_features=128, out_features=1280, bias=False)
+                  (lora_B2): Linear(in_features=128, out_features=1280, bias=False)
+                )
+                (q_proj): Linear(
+                  in_features=1280, out_features=1280, bias=True
+                  (lora_dropout): Dropout(p=0.1, inplace=False)
+                  (lora_route): Linear(in_features=1280, out_features=3, bias=False)
+                  (lora_A): Linear(in_features=1280, out_features=128, bias=False)
+                  (lora_B0): Linear(in_features=128, out_features=1280, bias=False)
+                  (lora_B1): Linear(in_features=128, out_features=1280, bias=False)
+                  (lora_B2): Linear(in_features=128, out_features=1280, bias=False)
+                )
+                (out_proj): Linear(in_features=1280, out_features=1280, bias=True)
+              )
+              (self_attn_layer_norm): LayerNorm((1280,), eps=1e-05, elementwise_affine=True)
+              (activation_fn): GELUActivation()
+              (fc1): Linear(in_features=1280, out_features=5120, bias=True)
+              (fc2): Linear(in_features=5120, out_features=1280, bias=True)
+              (final_layer_norm): LayerNorm((1280,), eps=1e-05, elementwise_affine=True)
+            )
+          )
+          (ln_post): LayerNorm((1280,), eps=1e-05, elementwise_affine=True)
+          (avg_pooler): AvgPool1d(kernel_size=(2,), stride=(2,), padding=(0,))
+          (proj): Linear(in_features=1280, out_features=3584, bias=True)
+        )
+        (visual): Qwen2_5OmniVisionEncoder(
+          (patch_embed): Qwen2_5_VisionPatchEmbed(
+            (proj): Conv3d(3, 1280, kernel_size=(2, 14, 14), stride=(2, 14, 14), bias=False)
+          )
+          (rotary_pos_emb): Qwen2_5_VisionRotaryEmbedding()
+          (blocks): ModuleList(
+            (0-31): 32 x Qwen2_5OmniVisionBlock(
+              (norm1): Qwen2RMSNorm((1280,), eps=1e-06)
+              (norm2): Qwen2RMSNorm((1280,), eps=1e-06)
+              (attn): Qwen2_5OmniVisionAttention(
+                (q): Linear(in_features=1280, out_features=1280, bias=True)
+                (k): Linear(in_features=1280, out_features=1280, bias=True)
+                (v): Linear(in_features=1280, out_features=1280, bias=True)
+                (proj): Linear(in_features=1280, out_features=1280, bias=True)
+              )
+              (mlp): Qwen2_5OmniMLP(
+                (gate_proj): Linear(
+                  in_features=1280, out_features=3420, bias=True
+                  (lora_dropout): Dropout(p=0.1, inplace=False)
+                  (lora_route): Linear(in_features=1280, out_features=3, bias=False)
+                  (lora_A): Linear(in_features=1280, out_features=128, bias=False)
+                  (lora_B0): Linear(in_features=128, out_features=3420, bias=False)
+                  (lora_B1): Linear(in_features=128, out_features=3420, bias=False)
+                  (lora_B2): Linear(in_features=128, out_features=3420, bias=False)
+                )
+                (up_proj): Linear(
+                  in_features=1280, out_features=3420, bias=True
+                  (lora_dropout): Dropout(p=0.1, inplace=False)
+                  (lora_route): Linear(in_features=1280, out_features=3, bias=False)
+                  (lora_A): Linear(in_features=1280, out_features=128, bias=False)
+                  (lora_B0): Linear(in_features=128, out_features=3420, bias=False)
+                  (lora_B1): Linear(in_features=128, out_features=3420, bias=False)
+                  (lora_B2): Linear(in_features=128, out_features=3420, bias=False)
+                )
+                (down_proj): Linear(
+                  in_features=3420, out_features=1280, bias=True
+                  (lora_dropout): Dropout(p=0.1, inplace=False)
+                  (lora_route): Linear(in_features=3420, out_features=3, bias=False)
+                  (lora_A): Linear(in_features=3420, out_features=128, bias=False)
+                  (lora_B0): Linear(in_features=128, out_features=1280, bias=False)
+                  (lora_B1): Linear(in_features=128, out_features=1280, bias=False)
+                  (lora_B2): Linear(in_features=128, out_features=1280, bias=False)
+                )
+                (act_fn): SiLU()
+              )
+            )
+          )
+          (merger): Qwen2_5OmniPatchMerger(
+            (ln_q): Qwen2RMSNorm((1280,), eps=1e-06)
+            (mlp): Sequential(
+              (0): Linear(in_features=5120, out_features=5120, bias=True)
+              (1): GELU(approximate='none')
+              (2): Linear(in_features=5120, out_features=3584, bias=True)
+            )
+          )
+        )
+        (model): Qwen2_5OmniThinkerTextModel(
+          (embed_tokens): Embedding(152064, 3584)
+          (layers): ModuleList(
+            (0-27): 28 x Qwen2_5OmniDecoderLayer(
+              (self_attn): Qwen2_5OmniAttention(
+                (q_proj): Linear(
+                  in_features=3584, out_features=3584, bias=True
+                  (lora_dropout): Dropout(p=0.1, inplace=False)
+                  (lora_route): Linear(in_features=3584, out_features=3, bias=False)
+                  (lora_A): Linear(in_features=3584, out_features=128, bias=False)
+                  (lora_B0): Linear(in_features=128, out_features=3584, bias=False)
+                  (lora_B1): Linear(in_features=128, out_features=3584, bias=False)
+                  (lora_B2): Linear(in_features=128, out_features=3584, bias=False)
+                )
+                (k_proj): Linear(
+                  in_features=3584, out_features=512, bias=True
+                  (lora_dropout): Dropout(p=0.1, inplace=False)
+                  (lora_route): Linear(in_features=3584, out_features=3, bias=False)
+                  (lora_A): Linear(in_features=3584, out_features=128, bias=False)
+                  (lora_B0): Linear(in_features=128, out_features=512, bias=False)
+                  (lora_B1): Linear(in_features=128, out_features=512, bias=False)
+                  (lora_B2): Linear(in_features=128, out_features=512, bias=False)
+                )
+                (v_proj): Linear(
+                  in_features=3584, out_features=512, bias=True
+                  (lora_dropout): Dropout(p=0.1, inplace=False)
+                  (lora_route): Linear(in_features=3584, out_features=3, bias=False)
+                  (lora_A): Linear(in_features=3584, out_features=128, bias=False)
+                  (lora_B0): Linear(in_features=128, out_features=512, bias=False)
+                  (lora_B1): Linear(in_features=128, out_features=512, bias=False)
+                  (lora_B2): Linear(in_features=128, out_features=512, bias=False)
+                )
+                (o_proj): Linear(
+                  in_features=3584, out_features=3584, bias=False
+                  (lora_dropout): Dropout(p=0.1, inplace=False)
+                  (lora_route): Linear(in_features=3584, out_features=3, bias=False)
+                  (lora_A): Linear(in_features=3584, out_features=128, bias=False)
+                  (lora_B0): Linear(in_features=128, out_features=3584, bias=False)
+                  (lora_B1): Linear(in_features=128, out_features=3584, bias=False)
+                  (lora_B2): Linear(in_features=128, out_features=3584, bias=False)
+                )
+                (rotary_emb): Qwen2_5OmniRotaryEmbedding()
+              )
+              (mlp): Qwen2MLP(
+                (gate_proj): Linear(
+                  in_features=3584, out_features=18944, bias=False
+                  (lora_dropout): Dropout(p=0.1, inplace=False)
+                  (lora_route): Linear(in_features=3584, out_features=3, bias=False)
+                  (lora_A): Linear(in_features=3584, out_features=128, bias=False)
+                  (lora_B0): Linear(in_features=128, out_features=18944, bias=False)
+                  (lora_B1): Linear(in_features=128, out_features=18944, bias=False)
+                  (lora_B2): Linear(in_features=128, out_features=18944, bias=False)
+                )
+                (up_proj): Linear(
+                  in_features=3584, out_features=18944, bias=False
+                  (lora_dropout): Dropout(p=0.1, inplace=False)
+                  (lora_route): Linear(in_features=3584, out_features=3, bias=False)
+                  (lora_A): Linear(in_features=3584, out_features=128, bias=False)
+                  (lora_B0): Linear(in_features=128, out_features=18944, bias=False)
+                  (lora_B1): Linear(in_features=128, out_features=18944, bias=False)
+                  (lora_B2): Linear(in_features=128, out_features=18944, bias=False)
+                )
+                (down_proj): Linear(
+                  in_features=18944, out_features=3584, bias=False
+                  (lora_dropout): Dropout(p=0.1, inplace=False)
+                  (lora_route): Linear(in_features=18944, out_features=3, bias=False)
+                  (lora_A): Linear(in_features=18944, out_features=128, bias=False)
+                  (lora_B0): Linear(in_features=128, out_features=3584, bias=False)
+                  (lora_B1): Linear(in_features=128, out_features=3584, bias=False)
+                  (lora_B2): Linear(in_features=128, out_features=3584, bias=False)
+                )
+                (act_fn): SiLU()
+              )
+              (input_layernorm): Qwen2RMSNorm((3584,), eps=1e-06)
+              (post_attention_layernorm): Qwen2RMSNorm((3584,), eps=1e-06)
+            )
+          )
+          (norm): Qwen2RMSNorm((3584,), eps=1e-06)
+          (rotary_emb): Qwen2_5OmniRotaryEmbedding()
+        )
+        (lm_head): Linear(in_features=3584, out_features=152064, bias=False)
+      )
+    )
+  )
+)
