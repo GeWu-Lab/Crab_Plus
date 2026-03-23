@@ -25,8 +25,8 @@ Basic dependencies:
 Install required packages:
 
 ```bash
-git clone https://github.com/xxx/Crab-Qwen2.5-Omni.git
-cd Crab-Qwen2.5-Omni
+git clone https://github.com/GeWu-Lab/Crab_Plus.git
+cd Crab_Plus
 conda create -n crab python=3.10 -y
 conda activate crab
 
