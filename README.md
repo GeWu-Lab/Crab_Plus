@@ -1,4 +1,4 @@
-# Crab: Audio-Visual Understanding, Interaction, and Editing with Qwen2.5-Omni
+# Crab+: A Scalable and Unified Audio-Visual Scene Understanding Model with Explicit Cooperation
 
 This repository provides the official implementation of **Crab**, built upon [Qwen2.5-Omni-7B](https://huggingface.co/Qwen/Qwen2.5-Omni-7B) with custom **MMoELoRA** fine-tuning. Crab is a unified framework for **19 audio-visual understanding, interaction, and editing (AV-UIE) tasks**, including emotion recognition, action recognition, audio-visual question answering, audio-visual segmentation, and more.
 
